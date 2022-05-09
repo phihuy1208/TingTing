@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/searcMatchedList"
+        android:name="com.example.tingting.SearchChatFragment"
+        android:label="fragment_search_chat"
+        tools:layout="@layout/fragment_search_chat" >
+        <argument
+            android:name="matched"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_searcMatchedList_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homepage"
+        android:name="com.example.tingting.FirstFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_firstFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+        <action
+            android:id="@+id/action_homepage_to_congratulation"
+            app:destination="@id/congratulation" />
+    </fragment>
+    <fragment
+        android:id="@+id/wholike"
+        android:name="com.example.tingting.SecondFragment"
+        android:label="List Match"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_wholike_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+        <action
+            android:id="@+id/action_wholike_to_searchChatFragment32"
+            app:destination="@id/searcMatchedList" />
+    </fragment>
+    <fragment
+        android:id="@+id/browser"
+        android:name="com.example.tingting.ThridFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_thrid" >
+        <action
+            android:id="@+id/action_browser_to_filterFragment2"
+            app:destination="@id/filterFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/chat"
+        android:name="com.example.tingting.FourFragment"
+        android:label="fragment_four"
+        tools:layout="@layout/fragment_four" >
+        <action
+            android:id="@+id/action_chat_to_fragmentMatches"
+            app:destination="@id/fragmentMatches" />
+        <action
+            android:id="@+id/action_chat_to_searchChatFragment"
+            app:destination="@id/searchChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.example.tingting.UserInfoFragment"
+        android:label="user_info_fragment"
+        tools:layout="@layout/user_info_fragment" >
+        <argument
+            android:name="idTarget"
+            app:argType="string"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_userInfoFragment_to_homepage"
+            app:destination="@id/homepage" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMatches"
+        android:name="com.example.tingting.FragmentMatches"
+        android:label="fragment_matches"
+        tools:layout="@layout/fragment_matches" >
+        <action
+            android:id="@+id/action_fragmentMatches_to_chat"
+            app:destination="@id/chat" />
+        <action
+            android:id="@+id/action_fragmentMatches_to_searchChatFragment"
+            app:destination="@id/searchChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/congratulation"
+        android:name="com.example.tingting.Congratulation"
+        android:label="fragment_congratulation"
+        tools:layout="@layout/fragment_congratulation" >
+        <argument
+            android:name="targetId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchChatFragment"
+        android:name="com.example.tingting.SearchChatFragment"
+        android:label="fragment_search_chat"
+        tools:layout="@layout/fragment_search_chat" />
+    <fragment
+        android:id="@+id/filterFragment2"
+        android:name="com.example.tingting.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
+</navigation>

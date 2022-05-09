@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilterFragment">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/da_clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/da_white"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".activity.DAWalkThroughActivity"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    style="@style/DABackIcon" />
+
+                <TextView
+                    style="@style/DAHeading"
+                    android:layout_alignTop="@id/ivBack"
+                    android:layout_alignBottom="@id/ivBack"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="@string/da_filter"
+                    android:textSize="@dimen/da_font_size_xlarge" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/DAEditTextHint"
+                android:layout_marginTop="@dimen/da_spacing_large"
+                android:drawableStart="@drawable/da_ic_location_on_black_24dp"
+                android:drawablePadding="@dimen/da_spacing_standard"
+                android:drawableTint="@color/da_textColorSecondary"
+                android:text="@string/da_location"
+                android:textSize="@dimen/da_font_size_normal" />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                style="@style/ProfileText"
+                android:drawableEnd="@drawable/da_ic_left_arrow"
+                android:text="381 Lê Thị Riêng, Thới An, Quận 12" />
+
+
+            <TextView
+                style="@style/DAEditTextHint"
+                android:layout_marginTop="@dimen/da_spacing_large"
+                android:drawableStart="@drawable/da_ic_distance"
+                android:drawablePadding="@dimen/da_spacing_standard"
+                android:drawableTint="@color/da_textColorSecondary"
+                android:text="@string/da_distance"
+                android:textSize="@dimen/da_font_size_normal" />
+
+
+            <com.example.tingting.rangeBar.DARangeBar
+                android:id="@+id/rangebarDistance"
+                style="@style/DARangeBar"
+                app:mrb_tickEnd="9" />
+
+            <TextView
+                style="@style/DAEditTextHint"
+                android:layout_marginTop="@dimen/da_spacing_large"
+                android:drawableStart="@drawable/da_ic_location_on_black_24dp"
+                android:drawablePadding="@dimen/da_spacing_standard"
+                android:drawableTint="@color/da_textColorSecondary"
+                android:text="@string/da_gender"
+                android:textSize="@dimen/da_font_size_normal" />
+
+            <Spinner
+                android:id="@+id/spDisplay"
+                style="@style/ProfileText"
+                android:drawableEnd="@drawable/da_ic_left_arrow"
+                android:text="Female" />
+
+            <TextView
+                style="@style/DAEditTextHint"
+                android:layout_marginTop="@dimen/da_spacing_large"
+                android:drawableStart="@drawable/da_ic_cake"
+                android:drawablePadding="@dimen/da_spacing_standard"
+                android:drawableTint="@color/da_textColorSecondary"
+                android:text="@string/da_age"
+                android:textSize="@dimen/da_font_size_normal" />
+
+            <com.example.tingting.rangeBar.DARangeBar
+                android:id="@+id/rangebarAge"
+                style="@style/DARangeBar"
+                app:mrb_tickEnd="7" />
+
+
+
+            <TextView
+                style="@style/DAEditTextHint"
+                android:layout_marginTop="@dimen/da_spacing_large"
+                android:drawableStart="@drawable/ic_baseline_favorite_border_24"
+                android:drawablePadding="@dimen/da_spacing_standard"
+                android:drawableTint="@color/da_textColorSecondary"
+                android:text="Favorite"
+                android:textSize="@dimen/da_font_size_normal" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rlInUserPreferences"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/btnContinue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInPreferences_2"
+                app:layout_constraintVertical_bias="0.756"
+                app:layout_wrapBehaviorInParent="included">
+
+
+                <CheckBox
+                    android:id="@+id/cbDisney"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/gray_border"
+                    android:button="@null"
+                    android:text="Disney"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_80"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cblovecat"
+                    android:layout_width="189dp"
+                    android:layout_height="35dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginStart="100dp"
+                    android:background="@drawable/gray_border"
+                    android:button="@null"
+                    android:text="Người yêu Mèo"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_80"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cbDisney"
+                    app:layout_constraintVertical_bias="0.064" />
+
+                <CheckBox
+                    android:id="@+id/rbcungkn"
+                    android:layout_width="189dp"
+                    android:layout_height="35dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginStart="32dp"
+                    android:background="@drawable/gray_border"
+                    android:button="@null"
+                    android:text="Cung Kim Ngưu"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_80"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cblovecat"
+                    app:layout_constraintVertical_bias="0.086" />
+
+                <CheckBox
+                    android:id="@+id/cbgame"
+                    android:layout_width="246dp"
+                    android:layout_height="35dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="@drawable/gray_border"
+                    android:button="@null"
+                    android:text="Thể thao điện tử"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_80"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.606"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rbcungkn"
+                    app:layout_constraintVertical_bias="0.108" />
+
+                <CheckBox
+                    android:id="@+id/cblife"
+                    android:layout_width="189dp"
+                    android:layout_height="35dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginStart="32dp"
+                    android:background="@drawable/gray_border"
+                    android:button="@null"
+                    android:text="Sống hướng ngoại"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_80"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cbgame"
+                    app:layout_constraintVertical_bias="0.17" />
+
+                <CheckBox
+                    android:id="@+id/cbMusic"
+                    android:layout_width="88dp"
+                    android:layout_height="35dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="@drawable/gray_border"
+                    android:button="@null"
+                    android:text="Nhạc"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_80"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.441"
+                    app:layout_constraintStart_toEndOf="@+id/cblife"
+                    app:layout_constraintTop_toBottomOf="@+id/cbgame"
+                    app:layout_constraintVertical_bias="0.165" />
+
+                <CheckBox
+                    android:id="@+id/rbNetflix"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="@drawable/gray_border"
+                    android:button="@null"
+                    android:text="Netflix"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_80"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.445"
+                    app:layout_constraintStart_toEndOf="@+id/rbcungkn"
+                    app:layout_constraintTop_toBottomOf="@+id/cblovecat"
+                    app:layout_constraintVertical_bias="0.086" />
+
+                <CheckBox
+                    android:id="@+id/cbwatchtv"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="@drawable/gray_border"
+                    android:button="@null"
+                    android:text="Xem phim"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_80"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.546"
+                    app:layout_constraintStart_toEndOf="@+id/cbDisney"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.06" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnApply"
+                    style="@style/DAMaterialButtonStyle.Enabled"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/da_spacing_large"
+                    android:layout_marginEnd="@dimen/da_spacing_large"
+                    android:text="@string/da_apply"
+                    android:textAllCaps="true" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
